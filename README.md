@@ -30,7 +30,7 @@ Layanan Python untuk **menggabungkan 3 video** dari URL (dari n8n cloud), lalu *
 
 2. **Buat venv dan install dependency:**
    ```powershell
-   cd D:\BODO\KANTOR\PROJECT\MERGE_VIDEO
+   cd D:\xx\xx\xx\MERGE_VIDEO
    python -m venv venv
    .\venv\Scripts\Activate.ps1
    pip install -r requirements.txt
