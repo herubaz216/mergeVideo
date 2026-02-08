@@ -1,0 +1,13 @@
+# Render - Blueprint untuk Merge Video Service
+# Deploy: connect repo ke Render, atau gunakan "New Web Service" dan set manual
+services:
+  - type: web
+    name: merge-video
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: ANIMASI_FOLDER_ID
+        sync: false
+      - key: GOOGLE_DRIVE_CREDENTIALS_JSON
+        sync: false
+    healthCheckPath: /health
