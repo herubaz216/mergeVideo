@@ -1,5 +1,5 @@
-# Render - Blueprint untuk Merge Video Service
-# Deploy: connect repo ke Render, atau gunakan "New Web Service" dan set manual
+# Render - Blueprint untuk Merge Video Service + Landing
+# Deploy: connect repo ke Render; set env vars (NEXT_PUBLIC_API_URL = URL service merge-video)
 services:
   - type: web
     name: merge-video
@@ -11,3 +11,13 @@ services:
       - key: GOOGLE_DRIVE_CREDENTIALS_JSON
         sync: false
     healthCheckPath: /health
+
+  - type: web
+    name: merge-video-landing
+    runtime: node
+    rootDir: landing
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    envVars:
+      - key: NEXT_PUBLIC_API_URL
+        sync: false
